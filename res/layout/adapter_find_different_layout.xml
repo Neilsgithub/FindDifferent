@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.uperone.finddifferent.view.SquareLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contentLayoutId"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/grid_item_border">
+    <TextView
+        android:id="@+id/contentTxtId"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:textSize="24.0dp"
+        android:textColor="@android:color/black"
+        />
+    <View
+        android:id="@+id/press"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/item_press_bg"
+        />
+</com.uperone.finddifferent.view.SquareLayout>

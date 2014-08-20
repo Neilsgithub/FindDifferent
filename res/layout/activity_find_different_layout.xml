@@ -1,0 +1,43 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	<GridView
+	    android:id="@+id/findDifferentGridViewId"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerInParent="true"
+	    android:numColumns="auto_fit"
+	    android:gravity="center"
+        android:scrollbars="none"
+	    ></GridView>
+	
+	<TextView
+	    android:id="@+id/timeCounterTxtId"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignRight="@id/findDifferentGridViewId"
+	    android:layout_marginRight="20.0dp"
+	    android:layout_above="@id/findDifferentGridViewId"
+	    android:layout_marginBottom="10.0dp"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="54.0dp"
+	    android:textSize="30.0dp"
+	    android:textColor="#0000FF"
+	    />
+	
+	<TextView
+	    android:id="@+id/rightCounterTxtId"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@id/findDifferentGridViewId"
+	    android:layout_marginLeft="20.0dp"
+	    android:layout_above="@id/findDifferentGridViewId"
+	    android:layout_marginBottom="10.0dp"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="54.0dp"
+	    android:textSize="30.0dp"
+	    android:textColor="#0000FF"
+	    />
+</RelativeLayout>
