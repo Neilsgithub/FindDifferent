@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Timer;
 
 import android.view.Display;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -20,6 +21,27 @@ public class FindDifferentActivity extends BaseActivity {
 	@Override
 	public void setContentView() {
 		setContentView(R.layout.activity_find_different_layout);
+	}
+	
+	@Override
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
+		keyUp( keyCode, event );
+		return super.onKeyUp(keyCode, event);
+	}
+	
+	private void keyUp( int keyCode, KeyEvent event ){
+		switch( keyCode ){
+		case KeyEvent.KEYCODE_MENU:{
+			reset( );
+			updateContent( );
+			startGame( );
+		}
+		break;
+		default:{
+			
+		}
+		break;
+		}
 	}
 	
 	@Override
@@ -59,6 +81,10 @@ public class FindDifferentActivity extends BaseActivity {
 		mFindDifferentGridAdapter.updateContents( mContentList );
 		mFindDifferentGridView.setAdapter( mFindDifferentGridAdapter );
 		
+		startGame( );
+	}
+	
+	private void startGame( ){
 		showRightCounter( mRightCnt );
 		showTimeCounter( GAME_TIME_LEN );
 		startTickTimer( );
@@ -141,7 +167,6 @@ public class FindDifferentActivity extends BaseActivity {
 	    public void run( ){
 	    	if( mCurrentTime == GAME_TIME_LEN ){
 	    		cancleTickTimer( );
-	    		reset( );
 	    	}else{
 	    		mCurrentTime++;
 	    		showTimeCounter( GAME_TIME_LEN - mCurrentTime );
@@ -153,7 +178,6 @@ public class FindDifferentActivity extends BaseActivity {
 	private void reset( ){
 		mCurrentTime = 0;
 		mRowCount = 2;
-		mKeySelect = -1;
 		mRightCnt = 0;
 	}
 	
