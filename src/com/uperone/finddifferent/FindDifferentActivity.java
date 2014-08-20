@@ -66,6 +66,7 @@ public class FindDifferentActivity extends BaseActivity {
 		});
 		
 		setGridViewWidth( );
+		mSelect = getSelect( );
 	}
 	
 	@Override
@@ -98,15 +99,15 @@ public class FindDifferentActivity extends BaseActivity {
 	}
 	
 	private ArrayList<String> getContentList( int rowCount, int keySelect ){
-		int select = getSelect( );
+		//int mainValue = getMainValue( );
 	
 		ArrayList<String> contentList = new ArrayList<String>( );
 		for( int rowIndex = 0; rowIndex < rowCount; rowIndex++ ){
 			for( int coloumIndex = 0; coloumIndex < rowCount; coloumIndex++ ){
 				if( rowIndex * rowCount + coloumIndex == keySelect ){
-					contentList.add( DataUtils.mKeyWords[select][1] );
+					contentList.add( DataUtils.mKeyWords[mSelect][0] );
 				}else{
-					contentList.add( DataUtils.mKeyWords[select][0] );
+					contentList.add( DataUtils.mKeyWords[mSelect][1] );
 				}
 			}
 		}
@@ -144,6 +145,12 @@ public class FindDifferentActivity extends BaseActivity {
 		return random.nextInt( max );
 	}
 	
+	private int getMainValue( ){
+		Random random = new Random( );
+		
+		return random.nextInt( 2 );
+	}
+	
 	private int getSelect( ){
 		Random random = new Random( );
 		return random.nextInt( DataUtils.mKeyWords.length );
@@ -179,6 +186,7 @@ public class FindDifferentActivity extends BaseActivity {
 		mCurrentTime = 0;
 		mRowCount = 2;
 		mRightCnt = 0;
+		mSelect = getSelect( );
 	}
 	
 	private void showRightCounter( final int rightCount ){
@@ -207,6 +215,7 @@ public class FindDifferentActivity extends BaseActivity {
 	private int mRowCount = 2;
 	private int mKeySelect = -1;
 	private int mRightCnt = 0;
+	private int mSelect = 0;
 	private TextView mRightCounterTxt = null;
 	private TextView mTimeCounterTxt = null;
 	private GridView mFindDifferentGridView = null;
